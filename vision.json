@@ -1,0 +1,11 @@
+[
+    { date_updated: '2022-06-19T21: 26: 45Z',
+    friendly_name: 'Untitled_1',
+    account_sid: 'AC9c8abfa9b4881da7596ed58e03ee3aaf',
+    url:
+     'https: //serverless.twilio.com/v1/Services/ZSd5e2fa4aac699e7594080e1a4886dde5/Functions/ZHc749b875dbe05bd4bc6adb59746a9747',
+    sid: 'ZHc749b875dbe05bd4bc6adb59746a9747',
+    date_created: '2022-06-19T21: 26: 45Z',
+    service_sid: 'ZSd5e2fa4aac699e7594080e1a4886dde5',
+    links: { function_versions:
+        'https: //serverless.twilio.com/v1/Services/ZSd5e2fa4aac699e7594080e1a4886dde5/Functions/ZHc749b875dbe05bd4bc6adb59746a9747/Versions' } } ]
