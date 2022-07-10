@@ -7,6 +7,9 @@ const requestUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverles
 //https://serverless.twilio.com/v1/Services/ZS186e4c332336cd165b8edede4c37cd5a/Builds
 
 const buildUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/ZS186e4c332336cd165b8edede4c37cd5a/Builds`;
+
+//VERSIONS: https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/${ZS}/Functions/ZH2/Versions'
+
 //https://serverless.twilio.com/v1/Services/ZSd40d69ad093d7d4cce9468ece50e6210/Functions
 //SERVICE BUILD > https://serverless.twilio.com/v1/Services/ZScf622767d7b278463c37bcbab181c4b2/Builds/ZB3921e0ef51fd90689dd5a8e77c8445b1
 const options = {
@@ -17,6 +20,22 @@ const options = {
     }
 
 }
+
+const versionResponseGenerator = (serviceSid, functionSid) => {
+    const requestFunctionsUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/${serviceSid}/Functions/${functionSid}/Versions`;
+    return axios.get(requestFunctionsUrl)
+        .then(response => {
+            const versions = response.data.function_versions[0].sid
+            console.log(versions);
+            //console.log(functions)
+            return versions
+        })
+        .catch(error => {
+            console.log(error)
+        }
+        );
+}
+
 
 const functionResponseGenerator = (serviceSid) => {
     const requestFunctionsUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/${serviceSid}/Functions`;
@@ -95,12 +114,13 @@ const buildSids = async () => {
 
 //buildSids();
 //serviceApi();
-functionResponseGenerator("ZS20c9d69506440933bc9cf3fe01b302b0");
+versionResponseGenerator("ZS186e4c332336cd165b8edede4c37cd5a", "ZHa375573dfe8c1d9fe0d1d9bbfa768cd2")
+//functionResponseGenerator("ZS186e4c332336cd165b8edede4c37cd5a");
 //assetResonseGenerator("ZScf622767d7b278463c37bcbab181c4b2");
 
 /*
 Service Friendly Name: voicemail
-Service Sid: ZSd40d69ad093d7d4cce9468ece50e6210
-Function Sid: ZH46b9fc4ef66aef7037f039bc5ac36c50
+Service Sid: ZHd0b9ed932b5b8d4bfe70fcecfce983e7
+Function Sid: ZS186e4c332336cd165b8edede4c37cd5a
 */
 
