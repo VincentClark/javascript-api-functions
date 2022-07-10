@@ -77,12 +77,18 @@ const versionResponseWriter = async (serviceSid, functionSid, versionSid) => {
 
 }
 
-const functionResponseGenerator = (serviceSid) => {
+const functionResponseGenerator = (serviceSid, friendlyName) => {
     const requestFunctionsUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/${serviceSid}/Functions`;
     return axios.get(requestFunctionsUrl)
         .then(response => {
             const functions = response.data.functions
-            console.log(formatResponse(functions));
+            // console.log("format", formatResponse(functions));
+            functions.forEach(element => {
+                console.log("service sid", serviceSid);
+                console.log(element.sid);
+                console.log(element.friendly_name);
+
+            });
             //console.log(functions)
             return functions
         })
@@ -108,18 +114,18 @@ const assetResonseGenerator = (serviceSid) => {
 }
 
 
-function formatResponse(titled, response) {
+function formatResponse(response) {
     let responseString = "";
     const responseArray = [];
     response.forEach(element => {
         responseString += `${element.sid} ${element.friendly_name}\n`;
         //console.log(responseString);
         responseArray.push({
-            title: titled,
             sid: element.sid,
             friendly_name: element.friendly_name
         })
     }
+
     );
     return responseArray;
 }
@@ -127,9 +133,21 @@ function formatResponse(titled, response) {
 const serviceApi = async () => {
     const axioResponse = await axios.get(requestUrl)
         .then(response => {
-            console.log(response.data.services[0]);
-            console.log(formatResponse("my butt", response.data.services));
-            return response.data;
+            const services = response.data.services
+
+            services.forEach(element => {
+                console.log(element.sid);
+                console.log(element.friendly_name);
+                functionResponseGenerator(element.sid, element.friendly_name);
+                //functionResponseGenerator(element.sid, element.friendly_name);
+                // functionResponseGenerator(element.sid, element.friendly_name);
+
+
+            });
+            //console.log(formatResponse(services));
+            //  const serviceList = formatResponse(services);
+            //  console.log(serviceList);
+            return services;
         })
         .catch(error => {
             console.log(error);
@@ -154,7 +172,7 @@ const buildSids = async () => {
 }
 
 //buildSids();
-//serviceApi();
+serviceApi()
 //versionResponseGenerator("ZS186e4c332336cd165b8edede4c37cd5a", "ZHa375573dfe8c1d9fe0d1d9bbfa768cd2")
 //functionResponseGenerator("ZS186e4c332336cd165b8edede4c37cd5a");
 //assetResonseGenerator("ZScf622767d7b278463c37bcbab181c4b2");
@@ -166,4 +184,4 @@ Function Sid: ZS186e4c332336cd165b8edede4c37cd5a
 Version Sid: ZN9c04146376f699a5ba329ac981b61eae
 */
 
-versionResponseWriter("ZS186e4c332336cd165b8edede4c37cd5a", "ZHa375573dfe8c1d9fe0d1d9bbfa768cd2", "ZN9c04146376f699a5ba329ac981b61eae");
+//versionResponseWriter("ZS186e4c332336cd165b8edede4c37cd5a", "ZHa375573dfe8c1d9fe0d1d9bbfa768cd2", "ZN9c04146376f699a5ba329ac981b61eae");
