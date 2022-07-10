@@ -1,11 +1,286 @@
-[
-    { date_updated: '2022-06-19T21: 26: 45Z',
-    friendly_name: 'Untitled_1',
-    account_sid: 'AC9c8abfa9b4881da7596ed58e03ee3aaf',
-    url:
-     'https: //serverless.twilio.com/v1/Services/ZSd5e2fa4aac699e7594080e1a4886dde5/Functions/ZHc749b875dbe05bd4bc6adb59746a9747',
-    sid: 'ZHc749b875dbe05bd4bc6adb59746a9747',
-    date_created: '2022-06-19T21: 26: 45Z',
-    service_sid: 'ZSd5e2fa4aac699e7594080e1a4886dde5',
-    links: { function_versions:
-        'https: //serverless.twilio.com/v1/Services/ZSd5e2fa4aac699e7594080e1a4886dde5/Functions/ZHc749b875dbe05bd4bc6adb59746a9747/Versions' } } ]
+{
+    "status": "completed",
+    "asset_versions": [
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH19f64de14a4b19869c602adeddca7b4c",
+            "sid": "ZNa7cccc191a47901ececd0504be862045",
+            "path": "/PHONE_ADS_Star_Wars_Demon.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH0e4c6f7c1f60caa1bc86dc94ca59638f",
+            "sid": "ZNa9e270ec9088d6e6ed385bb4c51ff4cc",
+            "path": "/PHONE_ADS_Duel_Of_Fates_Demon.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZHe7d20cff9bb3146970049bcee79751a4",
+            "sid": "ZN60eb799526cfa434e5d812f3d520bc8b",
+            "path": "/PHONE_ADS_Duel_of_Fates_Wraith.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZHced141f9d78cce4cce60778e1ec9ef56",
+            "sid": "ZN8afdea9dd8d1935c2118c8f8563c8722",
+            "path": "/PHONE_ADS_Smooth_Jazz_UpSell.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH923912508e06567b765e6d8669bd9446",
+            "sid": "ZN68af163d6834c7825b4de21617ad3983",
+            "path": "/PHONE_ADS_You_Are_Welcome_Spirit.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH213cf365c82ac4d3dcd5f74018d67e0f",
+            "sid": "ZNa031387a243d4b5485d7433daa4a442d",
+            "path": "/Duel_of_Fates.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH6d67348390cf98d8f44c9f7f3406825c",
+            "sid": "ZN8bf3647abae526f9cee602afa03cca21",
+            "path": "/PHONE_ADS_Duel_Of_Fates_UpSell.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH6839a7fa3681703c175a502846e3c11a",
+            "sid": "ZNb1c3786dbf73d2de2c565b9b857d9a55",
+            "path": "/FSIcon_TH_lite.png",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH4e3459a48d1cc1d5a5136fcd0cc0c2a5",
+            "sid": "ZN19a799f716cdc4dc1879fcc17a882524",
+            "path": "/FSIcon_TH_light.png",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZHbc2b4313ea8138299683a5e3f3f6d1d3",
+            "sid": "ZN62e54000a328d0940270c37fc005d66a",
+            "path": "/PHONE_ADS_Star_Wars_Wraith.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH879a05b5d73b302eb943b014538f5fd0",
+            "sid": "ZN5b8750d408315f5d27525b8b53e5ecbc",
+            "path": "/PHONE_ADS_Star_Wars_UpSell.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH1ef9503c6eed1d5ef5dc474e837aadeb",
+            "sid": "ZN4caa06b3b05842b33f92de5503dfde2d",
+            "path": "/FSIcon_TH_dark.png",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH0b76beb7103696ca238c18af6b63ec52",
+            "sid": "ZN786ea8b20a2398091e364c7a2a2b6e19",
+            "path": "/PHONE_ADS_Smooth_Jazz_Demon.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZHabe1480ca966715bd2221d8de7efcdfa",
+            "sid": "ZN08941470643273c45e6abfb9504c0c34",
+            "path": "/PHONE_ADS_Duel_Of_Fates_Spirit.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH298dc7610799031d8ede2ea7724cdc51",
+            "sid": "ZN9577c79886069480c0ff09fc28b0ca05",
+            "path": "/phone_logo_dark.png",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH97d92ee4f44fddffce707c3ce2fc50fe",
+            "sid": "ZNf6f7aaf9d7121076c02b8a563fe7559b",
+            "path": "/PHONE_ADS_You_Are_Welcome_UpSell.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZHdce07902e1586024291923485915d925",
+            "sid": "ZN173b2c552cfbd76061e72c9c34ef8321",
+            "path": "/PHONE_ADS_You_Are_Welcome_Wraith.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZHd13b8f9f3871bc9f134a840dbf199b71",
+            "sid": "ZN7b5fc65d2b5b4636c915ce2c14bc4490",
+            "path": "/PHONE_ADS_You_Are_Welcome_Demon.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH9da7689f3976de067a9423235be063c9",
+            "sid": "ZN21aafca9ff335d3183133fe4ca8852cc",
+            "path": "/PHONE_ADS_Smooth_Jazz_Spirit.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZHb246ccb34c5816cbe329d313913e181b",
+            "sid": "ZN407f3ebe25033d53fc35ba8caacc949f",
+            "path": "/You_Are_Welcome.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH6bc362cc1fe039021f7b10697919f688",
+            "sid": "ZNc98087bb995a3877f58e8b0b0cd222e3",
+            "path": "/PHONE_ADS_Star_Wars_Spirit.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH25fd6eaae4f976c9cbb608389101c91b",
+            "sid": "ZN70ba6a3e473ca2c9e83a879c41cbfd2e",
+            "path": "/FSIcon_TH_old.png",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH9305cd41b303d0a97bc5c084a509382c",
+            "sid": "ZNd09398b4f7bfcf0b8ccad2c018022d90",
+            "path": "/PHONE_ADS_Smooth_Jazz_Waith.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH393c6242daaf2d54b89d0275180ce13f",
+            "sid": "ZNad7553d80fc5aa75c2417af8535dd1b1",
+            "path": "/phone_logo_light.png",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZHb4fcf05baf21cbd46ecadf03d5c4a6e2",
+            "sid": "ZN9058ef5df5710b5bf94b9bb2cedd0cff",
+            "path": "/Star_Wars.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        },
+        {
+            "visibility": "public",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "asset_sid": "ZH3053348ae26e70a2dec4e815d9578873",
+            "sid": "ZN85e73e69c65620579af5672bb621e913",
+            "path": "/Smooth_Jazz.wav",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        }
+    ],
+    "runtime": "node12",
+    "function_versions": [
+        {
+            "sid": "ZNcc39b9935c3a9f6ac9a341266329e902",
+            "visibility": "protected",
+            "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+            "date_created": "2022-03-03T23:33:02Z",
+            "path": "/welcome",
+            "function_sid": "ZHc122dab0e94e659f29fe892b9deeb4b7",
+            "service_sid": "ZScf622767d7b278463c37bcbab181c4b2"
+        }
+    ],
+    "date_updated": "2022-03-03T23:33:02Z",
+    "account_sid": "AC7387c8534862b52721a0a6301745d5a6",
+    "url": "https://serverless.twilio.com/v1/Services/ZScf622767d7b278463c37bcbab181c4b2/Builds/ZB3921e0ef51fd90689dd5a8e77c8445b1",
+    "dependencies": [
+        {
+            "version": "4.17.11",
+            "name": "lodash"
+        },
+        {
+            "version": "3.29.2",
+            "name": "twilio"
+        },
+        {
+            "version": "0.0.1-security",
+            "name": "fs"
+        },
+        {
+            "version": "0.1.27",
+            "name": "xmldom"
+        },
+        {
+            "version": "1.2.1",
+            "name": "@twilio/runtime-handler"
+        },
+        {
+            "version": "0.11.0",
+            "name": "util"
+        }
+    ],
+    "sid": "ZB3921e0ef51fd90689dd5a8e77c8445b1",
+    "date_created": "2022-03-03T23:33:02Z",
+    "service_sid": "ZScf622767d7b278463c37bcbab181c4b2",
+    "links": {
+        "build_status": "https://serverless.twilio.com/v1/Services/ZScf622767d7b278463c37bcbab181c4b2/Builds/ZB3921e0ef51fd90689dd5a8e77c8445b1/Status"
+    }
+}
