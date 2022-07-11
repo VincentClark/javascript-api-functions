@@ -6,7 +6,7 @@ const fs = require('fs');
 //env variables
 const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
 const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
-const folderPath = process.env.LOCAL_FILE_PATH;
+const folderPath = `${process.env.LOCAL_FILE_PATH}`;
 const requestUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services`;
 //https://serverless.twilio.com/v1/Services/ZS186e4c332336cd165b8edede4c37cd5a/Builds
 
@@ -30,13 +30,13 @@ const options = {
 //FILE WRITING FUNCTION
 function createFile(folderPath, folderName, fileName, content) {
     try {
-        if (!fs.existsSync(`${folderPath}/${folderName}`)) {
-            fs.mkdirSync(folderName);
+        if (!fs.existsSync(`versions/${folderPath}/${folderName}`)) {
+            fs.mkdirSync(`versions/${folderName}`);
         }
     } catch (err) {
         console.error(err)
     }
-    fs.writeFile(`${folderName}/${fileName}`, content, (err) => {
+    fs.writeFile(`versions/${folderName}/${fileName}`, content, (err) => {
         if (err) {
             console.error(err);
             return;
@@ -47,12 +47,16 @@ function createFile(folderPath, folderName, fileName, content) {
 
 //END OF FILE WRITING FUNCTION
 
-const versionResponseGenerator = (serviceSid, functionSid) => {
+const versionResponseGenerator = (serviceSid, functionSid, friendly_name) => {
     const requestFunctionsUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/${serviceSid}/Functions/${functionSid}/Versions`;
     return axios.get(requestFunctionsUrl)
         .then(response => {
             const versions = response.data.function_versions[0].sid
-            console.log(versions);
+            console.log(`${functionSid}`);
+            console.log("serviceSid", serviceSid);
+            console.log("functionSid", functionSid);
+            console.log("version", versions);
+            versionResponseWriter(friendly_name, serviceSid, functionSid, versions);
             //console.log(functions)
             return versions
         })
@@ -62,13 +66,14 @@ const versionResponseGenerator = (serviceSid, functionSid) => {
         );
 }
 
-const versionResponseWriter = async (serviceSid, functionSid, versionSid) => {
+const versionResponseWriter = async (friendly_name, serviceSid, functionSid, versionSid) => {
     //Services/[ServiceSid]/Functions/[FunctionSid]/Versions/[FunctionVersionContentSid]/Content
     const versionUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/${serviceSid}/Functions/${functionSid}/Versions/${versionSid}/Content`;
     const versionResponse = await axios.get(versionUrl)
         .then(response => {
             console.log(response.data.content);
-            createFile(folderPath, "versions", `${functionSid}_${versionSid}.js`, response.data.content);
+            console.log(`${friendly_name}`);
+            createFile(`${folderPath}`, friendly_name, `${functionSid}_${versionSid}.js`, response.data.content);
             return response.data.content;
         })
         .catch(error => {
@@ -84,9 +89,10 @@ const functionResponseGenerator = (serviceSid, friendlyName) => {
             const functions = response.data.functions
             // console.log("format", formatResponse(functions));
             functions.forEach(element => {
-                console.log("service sid", serviceSid);
-                console.log(element.sid);
-                console.log(element.friendly_name);
+                versionResponseGenerator(serviceSid, element.sid, friendlyName);
+                //   console.log("service sid", serviceSid);
+                //  console.log(element.sid);
+                // console.log(element.friendly_name);
 
             });
             //console.log(functions)
@@ -136,8 +142,8 @@ const serviceApi = async () => {
             const services = response.data.services
 
             services.forEach(element => {
-                console.log(element.sid);
-                console.log(element.friendly_name);
+                // console.log(element.sid);
+                // console.log(element.friendly_name);
                 functionResponseGenerator(element.sid, element.friendly_name);
                 //functionResponseGenerator(element.sid, element.friendly_name);
                 // functionResponseGenerator(element.sid, element.friendly_name);
