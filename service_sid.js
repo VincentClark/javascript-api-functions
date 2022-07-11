@@ -47,16 +47,17 @@ function createFile(folderPath, folderName, fileName, content) {
 
 //END OF FILE WRITING FUNCTION
 
-const versionResponseGenerator = (serviceSid, functionSid, friendly_name) => {
+const versionResponseGenerator = (serviceSid, functionSid, friendly_name, function_friendly_name) => {
     const requestFunctionsUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/${serviceSid}/Functions/${functionSid}/Versions`;
     return axios.get(requestFunctionsUrl)
         .then(response => {
             const versions = response.data.function_versions[0].sid
             console.log(`${functionSid}`);
+            console.log("Function Name", function_friendly_name)
             console.log("serviceSid", serviceSid);
             console.log("functionSid", functionSid);
             console.log("version", versions);
-            versionResponseWriter(friendly_name, serviceSid, functionSid, versions);
+            versionResponseWriter(friendly_name, serviceSid, functionSid, versions, function_friendly_name);
             //console.log(functions)
             return versions
         })
@@ -66,14 +67,14 @@ const versionResponseGenerator = (serviceSid, functionSid, friendly_name) => {
         );
 }
 
-const versionResponseWriter = async (friendly_name, serviceSid, functionSid, versionSid) => {
+const versionResponseWriter = async (friendly_name, serviceSid, functionSid, versionSid, function_friendly_name) => {
     //Services/[ServiceSid]/Functions/[FunctionSid]/Versions/[FunctionVersionContentSid]/Content
     const versionUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/${serviceSid}/Functions/${functionSid}/Versions/${versionSid}/Content`;
     const versionResponse = await axios.get(versionUrl)
         .then(response => {
             console.log(response.data.content);
             console.log(`${friendly_name}`);
-            createFile(`${folderPath}`, friendly_name, `${functionSid}_${versionSid}.js`, response.data.content);
+            createFile(`${folderPath}`, friendly_name, `${function_friendly_name}.js`, response.data.content);
             return response.data.content;
         })
         .catch(error => {
@@ -89,7 +90,8 @@ const functionResponseGenerator = (serviceSid, friendlyName) => {
             const functions = response.data.functions
             // console.log("format", formatResponse(functions));
             functions.forEach(element => {
-                versionResponseGenerator(serviceSid, element.sid, friendlyName);
+                console.log("FRIENDLY", element.friendly_name);
+                versionResponseGenerator(serviceSid, element.sid, friendlyName, element.friendly_name);
                 //   console.log("service sid", serviceSid);
                 //  console.log(element.sid);
                 // console.log(element.friendly_name);
@@ -182,7 +184,8 @@ serviceApi()
 //versionResponseGenerator("ZS186e4c332336cd165b8edede4c37cd5a", "ZHa375573dfe8c1d9fe0d1d9bbfa768cd2")
 //functionResponseGenerator("ZS186e4c332336cd165b8edede4c37cd5a");
 //assetResonseGenerator("ZScf622767d7b278463c37bcbab181c4b2");
-
+//'https://serverless.twilio.com/v1/Services/ZS186e4c332336cd165b8edede4c37cd5a/Functions/ZHa375573dfe8c1d9fe0d1d9bbfa768cd2/Versions/ZN9c04146376f699a5ba329ac981b61eae'
+//
 /*
 Service Friendly Name: voicemail
 Service Sid: ZHd0b9ed932b5b8d4bfe70fcecfce983e7
