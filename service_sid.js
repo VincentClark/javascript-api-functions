@@ -8,7 +8,6 @@ const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
 const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
 const folderPath = `${process.env.LOCAL_FILE_PATH}`;
 const requestUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services`;
-//https://serverless.twilio.com/v1/Services/ZS186e4c332336cd165b8edede4c37cd5a/Builds
 
 const buildUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/ZS186e4c332336cd165b8edede4c37cd5a/Builds`;
 h
@@ -20,8 +19,7 @@ const options = {
     }
 
 }
-//https://phone-4798.twil.io/FSIcon_TH_lite.png
-//FILE WRITING FUNCTION
+//creates file on your local machine
 function createFile(folderPath, folderName, fileName, content) {
     try {
         if (!fs.existsSync(`versions/${folderPath}/${folderName}`)) {
@@ -40,7 +38,7 @@ function createFile(folderPath, folderName, fileName, content) {
 }
 
 //END OF FILE WRITING FUNCTION
-
+//determines version of function
 const versionResponseGenerator = (serviceSid, functionSid, friendly_name, function_friendly_name) => {
     const requestFunctionsUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/${serviceSid}/Functions/${functionSid}/Versions`;
     return axios.get(requestFunctionsUrl)
@@ -173,26 +171,5 @@ const buildSids = async () => {
         );
 }
 
-//buildSids();
+//creates 
 serviceApi()
-//versionResponseGenerator("ZS186e4c332336cd165b8edede4c37cd5a", "ZHa375573dfe8c1d9fe0d1d9bbfa768cd2")
-//functionResponseGenerator("ZS186e4c332336cd165b8edede4c37cd5a");
-//assetResonseGenerator("ZScf622767d7b278463c37bcbab181c4b2");
-//'https://serverless.twilio.com/v1/Services/ZS186e4c332336cd165b8edede4c37cd5a/Functions/ZHa375573dfe8c1d9fe0d1d9bbfa768cd2/Versions/ZN9c04146376f699a5ba329ac981b61eae'
-//
-/*
-Service Friendly Name: voicemail
-Service Sid: ZHd0b9ed932b5b8d4bfe70fcecfce983e7
-Function Sid: ZS186e4c332336cd165b8edede4c37cd5a
-Version Sid: ZN9c04146376f699a5ba329ac981b61eae
-
-asseets
-
-ZScf622767d7b278463c37bcbab181c4b2
-ZH393c6242daaf2d54b89d0275180ce13f
-ZN8bf3647abae526f9cee602afa03cca21
-https://serverless.twilio.com/v1/Services/ZScf622767d7b278463c37bcbab181c4b2/Assets/ZH393c6242daaf2d54b89d0275180ce13f"
-
-*/
-
-//versionResponseWriter("ZS186e4c332336cd165b8edede4c37cd5a", "ZHa375573dfe8c1d9fe0d1d9bbfa768cd2", "ZN9c04146376f699a5ba329ac981b61eae");

@@ -73,8 +73,6 @@ const versionApi = async (serivceSid, AssetSid, domainName, serviceUnqiueName) =
         );
     return versionRequest;
 }
-//versionApi("ZScf622767d7b278463c37bcbab181c4b2", "ZHd13b8f9f3871bc9f134a840dbf199b71")
-
 
 
 const assetList = async (serviceSid, domainBase, serverUniqueName) => {
