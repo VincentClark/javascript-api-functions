@@ -7,3 +7,4 @@
 #FlexTwo
 TWILIO_ACCOUNT_SID=xxxxx
 TWILIO_AUTH_TOKEN=xxxxxxx
+LOCAL_FILE_PATH=\local\blabla

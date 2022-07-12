@@ -11,14 +11,7 @@ const requestUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverles
 //https://serverless.twilio.com/v1/Services/ZS186e4c332336cd165b8edede4c37cd5a/Builds
 
 const buildUrl = `https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/ZS186e4c332336cd165b8edede4c37cd5a/Builds`;
-
-//VERSIONS: https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/${ZS}/Functions/ZH2/Versions'
-
-//https://${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}@serverless.twilio.com/v1/Services/${serviceSid}/Functions/${functionSid}/Versions
-
-
-//https://serverless.twilio.com/v1/Services/ZSd40d69ad093d7d4cce9468ece50e6210/Functions
-//SERVICE BUILD > https://serverless.twilio.com/v1/Services/ZScf622767d7b278463c37bcbab181c4b2/Builds/ZB3921e0ef51fd90689dd5a8e77c8445b1
+h
 const options = {
     method: 'GET',
     headers: {
@@ -27,6 +20,7 @@ const options = {
     }
 
 }
+//https://phone-4798.twil.io/FSIcon_TH_lite.png
 //FILE WRITING FUNCTION
 function createFile(folderPath, folderName, fileName, content) {
     try {
@@ -191,6 +185,14 @@ Service Friendly Name: voicemail
 Service Sid: ZHd0b9ed932b5b8d4bfe70fcecfce983e7
 Function Sid: ZS186e4c332336cd165b8edede4c37cd5a
 Version Sid: ZN9c04146376f699a5ba329ac981b61eae
+
+asseets
+
+ZScf622767d7b278463c37bcbab181c4b2
+ZH393c6242daaf2d54b89d0275180ce13f
+ZN8bf3647abae526f9cee602afa03cca21
+https://serverless.twilio.com/v1/Services/ZScf622767d7b278463c37bcbab181c4b2/Assets/ZH393c6242daaf2d54b89d0275180ce13f"
+
 */
 
 //versionResponseWriter("ZS186e4c332336cd165b8edede4c37cd5a", "ZHa375573dfe8c1d9fe0d1d9bbfa768cd2", "ZN9c04146376f699a5ba329ac981b61eae");
